@@ -1,0 +1,3305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>RoadRescue | Roadside Assistance</title>
+ <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <a href="#home" class="logo">
+
+        <div class="logo-icon">
+            RR
+        </div>
+
+        <span>
+            Road<span>Rescue</span>
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#services">
+            Services
+        </a>
+
+        <a href="#helpers">
+            Helpers
+        </a>
+
+        <a href="#nearby">
+            Nearby
+        </a>
+
+        <a href="#bookings">
+            My Bookings
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <button
+            class="location-btn"
+            onclick="detectLocation()"
+        >
+            📍 <span>Detect Location</span>
+        </button>
+
+
+        <button
+            class="notification-btn"
+            onclick="openNotifications()"
+        >
+            🔔
+            <span id="notificationCount">2</span>
+        </button>
+
+
+        <button
+            class="profile-avatar"
+            onclick="openProfile()"
+        >
+            R
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ● Community-powered roadside assistance
+        </div>
+
+
+        <h1>
+
+            Help is closer
+            <span>than you think.</span>
+
+        </h1>
+
+
+        <p>
+
+            Stuck on the road? Connect with nearby mechanics,
+            towing services, battery experts and trusted helpers
+            in just a few clicks.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <button
+                class="btn primary"
+                onclick="openBooking()"
+            >
+                🆘 Request Help
+            </button>
+
+
+            <button
+                class="btn secondary"
+                onclick="scrollToSection('helpers')"
+            >
+                Find a Helper
+            </button>
+
+        </div>
+
+
+        <div class="trust">
+
+            <span>✓ Quick connection</span>
+
+            <span>✓ Rated helpers</span>
+
+            <span>✓ Safety focused</span>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="hero-map">
+
+        <div class="map-card">
+
+            <div class="map-top">
+
+                <span>
+                    📍 Your area
+                </span>
+
+                <span class="online">
+                    ● Live community
+                </span>
+
+            </div>
+
+
+            <div class="fake-map">
+
+                <div class="map-road road1"></div>
+                <div class="map-road road2"></div>
+
+                <div class="map-place p1">
+                    🔧
+                </div>
+
+                <div class="map-place p2">
+                    ⛽
+                </div>
+
+                <div class="map-place p3">
+                    🏥
+                </div>
+
+                <div class="you-marker">
+                    🚗
+                </div>
+
+            </div>
+
+
+            <div class="map-bottom">
+
+                <div>
+
+                    <small>
+                        Available nearby
+                    </small>
+
+                    <strong>
+                        12 helpers
+                    </strong>
+
+                </div>
+
+
+                <div class="mini-users">
+
+                    <span>AK</span>
+                    <span>MK</span>
+                    <span>SK</span>
+                    <span>+9</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     QUICK SERVICES
+===================================================== -->
+
+<section
+    class="section"
+    id="services"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <label>
+                QUICK HELP
+            </label>
+
+            <h2>
+                What do you need?
+            </h2>
+
+        </div>
+
+        <button
+            class="text-btn"
+            onclick="openBooking()"
+        >
+            View all →
+        </button>
+
+    </div>
+
+
+
+    <div class="service-grid">
+
+
+        <button
+            class="service-card"
+            onclick="selectService('Flat Tyre')"
+        >
+
+            <div class="service-icon">
+                🛞
+            </div>
+
+            <h3>
+                Flat Tyre
+            </h3>
+
+            <p>
+                Tyre repair or replacement
+            </p>
+
+        </button>
+
+
+        <button
+            class="service-card"
+            onclick="selectService('Battery Jump Start')"
+        >
+
+            <div class="service-icon">
+                🔋
+            </div>
+
+            <h3>
+                Dead Battery
+            </h3>
+
+            <p>
+                Jump start and battery help
+            </p>
+
+        </button>
+
+
+        <button
+            class="service-card"
+            onclick="selectService('Fuel Delivery')"
+        >
+
+            <div class="service-icon">
+                ⛽
+            </div>
+
+            <h3>
+                Out of Fuel
+            </h3>
+
+            <p>
+                Fuel delivery assistance
+            </p>
+
+        </button>
+
+
+        <button
+            class="service-card"
+            onclick="selectService('Towing')"
+        >
+
+            <div class="service-icon">
+                🚙
+            </div>
+
+            <h3>
+                Towing
+            </h3>
+
+            <p>
+                Vehicle towing and recovery
+            </p>
+
+        </button>
+
+
+        <button
+            class="service-card"
+            onclick="selectService('Mechanical Repair')"
+        >
+
+            <div class="service-icon">
+                🔧
+            </div>
+
+            <h3>
+                Mechanical Issue
+            </h3>
+
+            <p>
+                Find a nearby mechanic
+            </p>
+
+        </button>
+
+
+        <button
+            class="service-card"
+            onclick="selectService('Other Roadside Help')"
+        >
+
+            <div class="service-icon">
+                🆘
+            </div>
+
+            <h3>
+                Other Help
+            </h3>
+
+            <p>
+                Tell us what happened
+            </p>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HELPERS
+===================================================== -->
+
+<section
+    class="helpers-section"
+    id="helpers"
+>
+
+    <div class="section">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <label>
+                    NEARBY COMMUNITY
+                </label>
+
+                <h2>
+                    People who can help
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="helper-controls">
+
+            <div class="search-box">
+
+                🔎
+
+                <input
+                    type="text"
+                    id="helperSearch"
+                    placeholder="Search mechanic, towing, battery..."
+                    oninput="searchHelpers()"
+                >
+
+            </div>
+
+
+            <select
+                id="helperFilter"
+                onchange="filterHelpers()"
+            >
+
+                <option value="all">
+                    All Services
+                </option>
+
+                <option value="mechanic">
+                    Mechanics
+                </option>
+
+                <option value="towing">
+                    Towing
+                </option>
+
+                <option value="battery">
+                    Battery
+                </option>
+
+                <option value="fuel">
+                    Fuel
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <div
+            class="helper-grid"
+            id="helperGrid"
+        >
+
+
+            <!-- HELPER 1 -->
+
+            <div
+                class="helper-card"
+                data-type="mechanic"
+                data-name="Arun Kumar Roadside Mechanic"
+            >
+
+                <div class="helper-top">
+
+                    <div class="helper-avatar">
+                        AK
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Arun Kumar
+                        </h3>
+
+                        <p>
+                            Roadside Mechanic
+                        </p>
+
+                    </div>
+
+                    <span class="available">
+                        ● Available
+                    </span>
+
+                </div>
+
+
+                <div class="helper-details">
+
+                    <span>⭐ 4.9</span>
+
+                    <span>126 reviews</span>
+
+                    <span>📍 1.2 km</span>
+
+                </div>
+
+
+                <div class="tags">
+
+                    <span>
+                        Tyre Repair
+                    </span>
+
+                    <span>
+                        Engine
+                    </span>
+
+                    <span>
+                        Battery
+                    </span>
+
+                </div>
+
+
+                <div class="helper-actions">
+
+                    <button
+                        class="call-btn"
+                        onclick="callHelper('Arun Kumar','+919800000001')"
+                    >
+                        📞 Call
+                    </button>
+
+                    <button
+                        class="message-btn"
+                        onclick="messageHelper('Arun Kumar')"
+                    >
+                        💬 Message
+                    </button>
+
+                    <button
+                        class="book-btn"
+                        onclick="bookWithHelper('Arun Kumar','Roadside Mechanic',1.2,4.9)"
+                    >
+                        Request
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HELPER 2 -->
+
+            <div
+                class="helper-card"
+                data-type="mechanic"
+                data-name="Meera Auto Care Mobile Mechanic"
+            >
+
+                <div class="helper-top">
+
+                    <div class="helper-avatar pink">
+                        MA
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Meera Auto Care
+                        </h3>
+
+                        <p>
+                            Mobile Mechanic
+                        </p>
+
+                    </div>
+
+                    <span class="available">
+                        ● Available
+                    </span>
+
+                </div>
+
+
+                <div class="helper-details">
+
+                    <span>⭐ 4.8</span>
+
+                    <span>89 reviews</span>
+
+                    <span>📍 2.1 km</span>
+
+                </div>
+
+
+                <div class="tags">
+
+                    <span>
+                        Car Service
+                    </span>
+
+                    <span>
+                        Battery
+                    </span>
+
+                </div>
+
+
+                <div class="helper-actions">
+
+                    <button
+                        class="call-btn"
+                        onclick="callHelper('Meera Auto Care','+919800000002')"
+                    >
+                        📞 Call
+                    </button>
+
+                    <button
+                        class="message-btn"
+                        onclick="messageHelper('Meera Auto Care')"
+                    >
+                        💬 Message
+                    </button>
+
+                    <button
+                        class="book-btn"
+                        onclick="bookWithHelper('Meera Auto Care','Mobile Mechanic',2.1,4.8)"
+                    >
+                        Request
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HELPER 3 -->
+
+            <div
+                class="helper-card"
+                data-type="towing"
+                data-name="Sanjay Towing Recovery"
+            >
+
+                <div class="helper-top">
+
+                    <div class="helper-avatar orange">
+                        ST
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Sanjay Towing
+                        </h3>
+
+                        <p>
+                            Towing & Recovery
+                        </p>
+
+                    </div>
+
+                    <span class="available">
+                        ● Available
+                    </span>
+
+                </div>
+
+
+                <div class="helper-details">
+
+                    <span>⭐ 4.7</span>
+
+                    <span>74 reviews</span>
+
+                    <span>📍 3.4 km</span>
+
+                </div>
+
+
+                <div class="tags">
+
+                    <span>
+                        Towing
+                    </span>
+
+                    <span>
+                        Recovery
+                    </span>
+
+                </div>
+
+
+                <div class="helper-actions">
+
+                    <button
+                        class="call-btn"
+                        onclick="callHelper('Sanjay Towing','+919800000003')"
+                    >
+                        📞 Call
+                    </button>
+
+                    <button
+                        class="message-btn"
+                        onclick="messageHelper('Sanjay Towing')"
+                    >
+                        💬 Message
+                    </button>
+
+                    <button
+                        class="book-btn"
+                        onclick="bookWithHelper('Sanjay Towing','Towing & Recovery',3.4,4.7)"
+                    >
+                        Request
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HELPER 4 -->
+
+            <div
+                class="helper-card"
+                data-type="battery"
+                data-name="Karthik Battery Assistance"
+            >
+
+                <div class="helper-top">
+
+                    <div class="helper-avatar blue">
+                        KS
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Karthik
+                        </h3>
+
+                        <p>
+                            Battery Assistance
+                        </p>
+
+                    </div>
+
+                    <span class="available">
+                        ● Available
+                    </span>
+
+                </div>
+
+
+                <div class="helper-details">
+
+                    <span>⭐ 4.9</span>
+
+                    <span>53 reviews</span>
+
+                    <span>📍 0.8 km</span>
+
+                </div>
+
+
+                <div class="tags">
+
+                    <span>
+                        Jump Start
+                    </span>
+
+                    <span>
+                        Battery
+                    </span>
+
+                </div>
+
+
+                <div class="helper-actions">
+
+                    <button
+                        class="call-btn"
+                        onclick="callHelper('Karthik','+919800000004')"
+                    >
+                        📞 Call
+                    </button>
+
+                    <button
+                        class="message-btn"
+                        onclick="messageHelper('Karthik')"
+                    >
+                        💬 Message
+                    </button>
+
+                    <button
+                        class="book-btn"
+                        onclick="bookWithHelper('Karthik','Battery Assistance',0.8,4.9)"
+                    >
+                        Request
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HELPER 5 -->
+
+            <div
+                class="helper-card"
+                data-type="mechanic"
+                data-name="Priya Motors Vehicle Technician"
+            >
+
+                <div class="helper-top">
+
+                    <div class="helper-avatar purple">
+                        PM
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Priya Motors
+                        </h3>
+
+                        <p>
+                            Vehicle Technician
+                        </p>
+
+                    </div>
+
+                    <span class="busy">
+                        ● Busy
+                    </span>
+
+                </div>
+
+
+                <div class="helper-details">
+
+                    <span>⭐ 4.6</span>
+
+                    <span>61 reviews</span>
+
+                    <span>📍 4.2 km</span>
+
+                </div>
+
+
+                <div class="tags">
+
+                    <span>
+                        Diagnostics
+                    </span>
+
+                    <span>
+                        AC Repair
+                    </span>
+
+                </div>
+
+
+                <div class="helper-actions">
+
+                    <button
+                        class="call-btn"
+                        onclick="callHelper('Priya Motors','+919800000005')"
+                    >
+                        📞 Call
+                    </button>
+
+                    <button
+                        class="message-btn"
+                        onclick="messageHelper('Priya Motors')"
+                    >
+                        💬 Message
+                    </button>
+
+                    <button
+                        class="book-btn disabled"
+                        disabled
+                    >
+                        Busy
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HELPER 6 -->
+
+            <div
+                class="helper-card"
+                data-type="towing"
+                data-name="QuickTow 24/7 Towing"
+            >
+
+                <div class="helper-top">
+
+                    <div class="helper-avatar dark">
+                        QT
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            QuickTow 24/7
+                        </h3>
+
+                        <p>
+                            Towing Service
+                        </p>
+
+                    </div>
+
+                    <span class="available">
+                        ● Available
+                    </span>
+
+                </div>
+
+
+                <div class="helper-details">
+
+                    <span>⭐ 4.8</span>
+
+                    <span>142 reviews</span>
+
+                    <span>📍 5.1 km</span>
+
+                </div>
+
+
+                <div class="tags">
+
+                    <span>
+                        Flatbed
+                    </span>
+
+                    <span>
+                        Towing
+                    </span>
+
+                </div>
+
+
+                <div class="helper-actions">
+
+                    <button
+                        class="call-btn"
+                        onclick="callHelper('QuickTow 24/7','+919800000006')"
+                    >
+                        📞 Call
+                    </button>
+
+                    <button
+                        class="message-btn"
+                        onclick="messageHelper('QuickTow 24/7')"
+                    >
+                        💬 Message
+                    </button>
+
+                    <button
+                        class="book-btn"
+                        onclick="bookWithHelper('QuickTow 24/7','Towing Service',5.1,4.8)"
+                    >
+                        Request
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NEARBY PLACES
+===================================================== -->
+
+<section
+    class="section"
+    id="nearby"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <label>
+                NEARBY PLACES
+            </label>
+
+            <h2>
+                Useful places around you
+            </h2>
+
+        </div>
+
+        <button
+            class="text-btn"
+            onclick="openMap()"
+        >
+            Open Map →
+        </button>
+
+    </div>
+
+
+
+    <div class="nearby-grid">
+
+
+        <div class="place-card">
+
+            <div class="place-icon hospital">
+                🏥
+            </div>
+
+            <div>
+
+                <span class="place-label">
+                    EMERGENCY
+                </span>
+
+                <h3>
+                    Hospitals
+                </h3>
+
+                <p>
+                    Find hospitals and clinics nearby.
+                </p>
+
+                <button
+                    onclick="searchNearby('hospital')"
+                >
+                    Find Nearby →
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="place-card">
+
+            <div class="place-icon fuel">
+                ⛽
+            </div>
+
+            <div>
+
+                <span class="place-label">
+                    VEHICLE
+                </span>
+
+                <h3>
+                    Fuel Stations
+                </h3>
+
+                <p>
+                    Find petrol stations near you.
+                </p>
+
+                <button
+                    onclick="searchNearby('petrol station')"
+                >
+                    Find Nearby →
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="place-card">
+
+            <div class="place-icon workshop">
+                🔧
+            </div>
+
+            <div>
+
+                <span class="place-label">
+                    SERVICE
+                </span>
+
+                <h3>
+                    Workshops
+                </h3>
+
+                <p>
+                    Locate vehicle repair workshops.
+                </p>
+
+                <button
+                    onclick="searchNearby('car repair workshop')"
+                >
+                    Find Nearby →
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="place-card">
+
+            <div class="place-icon parking">
+                🅿️
+            </div>
+
+            <div>
+
+                <span class="place-label">
+                    CONVENIENCE
+                </span>
+
+                <h3>
+                    Parking
+                </h3>
+
+                <p>
+                    Find nearby parking locations.
+                </p>
+
+                <button
+                    onclick="searchNearby('parking')"
+                >
+                    Find Nearby →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BOOKINGS
+===================================================== -->
+
+<section
+    class="section bookings-section"
+    id="bookings"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <label>
+                YOUR ACTIVITY
+            </label>
+
+            <h2>
+                My Bookings
+            </h2>
+
+        </div>
+
+        <button
+            class="text-btn"
+            onclick="clearBookings()"
+        >
+            Clear History
+        </button>
+
+    </div>
+
+
+    <div id="bookingList">
+
+        <div class="empty-bookings">
+
+            <div>
+                📋
+            </div>
+
+            <h3>
+                No bookings yet
+            </h3>
+
+            <p>
+                Your roadside assistance bookings will appear here.
+            </p>
+
+            <button
+                class="btn primary"
+                onclick="openBooking()"
+            >
+                Request Help
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SAFETY
+===================================================== -->
+
+<section class="safety">
+
+    <div>
+
+        <label>
+            YOUR SAFETY FIRST
+        </label>
+
+        <h2>
+            Stranded on the road?
+        </h2>
+
+        <p>
+
+            Move to a safe location if possible, switch on
+            your hazard lights and stay away from moving traffic.
+            For accidents or immediate danger, contact emergency
+            services first.
+
+        </p>
+
+
+        <button
+            class="emergency-btn"
+            onclick="callEmergency()"
+        >
+            🚨 Call 112
+        </button>
+
+    </div>
+
+
+    <div class="safety-tips">
+
+        <div>
+
+            <strong>
+                01
+            </strong>
+
+            <span>
+                Switch on hazard lights.
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                02
+            </strong>
+
+            <span>
+                Move to a safe location.
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                03
+            </strong>
+
+            <span>
+                Share your location carefully.
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                04
+            </strong>
+
+            <span>
+                Verify helpers before meeting.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BECOME HELPER
+===================================================== -->
+
+<section class="join-section">
+
+    <div>
+
+        <label>
+            JOIN THE COMMUNITY
+        </label>
+
+        <h2>
+            Can you help someone nearby?
+        </h2>
+
+        <p>
+
+            Register yourself as a mechanic, towing provider,
+            battery expert or roadside helper.
+
+        </p>
+
+    </div>
+
+
+    <button
+        class="btn white"
+        onclick="openHelperForm()"
+    >
+        Become a Helper →
+    </button>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+
+            <a href="#home" class="logo footer-logo">
+
+                <div class="logo-icon">
+                    RR
+                </div>
+
+                <span>
+                    Road<span>Rescue</span>
+                </span>
+
+            </a>
+
+            <p>
+                Connecting people with help,
+                wherever the road takes them.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#helpers">
+                Helpers
+            </a>
+
+            <a href="#nearby">
+                Nearby
+            </a>
+
+            <a href="#bookings">
+                Bookings
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 RoadRescue · Community Roadside Assistance
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     BOOKING MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="bookingModal"
+>
+
+    <div class="modal">
+
+        <button
+            class="close-modal"
+            onclick="closeModal('bookingModal')"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-icon">
+            🚗
+        </div>
+
+
+        <h2>
+            Request Roadside Help
+        </h2>
+
+        <p class="modal-subtitle">
+            Tell us what happened and we'll connect you
+            with a nearby helper.
+        </p>
+
+
+        <form
+            id="bookingForm"
+            onsubmit="submitBooking(event)"
+        >
+
+
+            <label>
+                What do you need help with?
+            </label>
+
+            <select
+                id="serviceSelect"
+                required
+            >
+
+                <option value="">
+                    Select a service
+                </option>
+
+                <option>
+                    Flat Tyre
+                </option>
+
+                <option>
+                    Battery Jump Start
+                </option>
+
+                <option>
+                    Fuel Delivery
+                </option>
+
+                <option>
+                    Towing
+                </option>
+
+                <option>
+                    Mechanical Repair
+                </option>
+
+                <option>
+                    Other Roadside Help
+                </option>
+
+            </select>
+
+
+
+            <label>
+                Your name
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Enter your name"
+                required
+            >
+
+
+
+            <label>
+                Phone number
+            </label>
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="10-digit mobile number"
+                pattern="[0-9]{10}"
+                required
+            >
+
+
+
+            <label>
+                Vehicle type
+            </label>
+
+            <select
+                id="vehicleType"
+                required
+            >
+
+                <option value="">
+                    Select vehicle
+                </option>
+
+                <option>
+                    Car
+                </option>
+
+                <option>
+                    Bike
+                </option>
+
+                <option>
+                    Scooter
+                </option>
+
+                <option>
+                    Auto
+                </option>
+
+                <option>
+                    Van
+                </option>
+
+                <option>
+                    Truck
+                </option>
+
+            </select>
+
+
+
+            <label>
+                Vehicle number
+            </label>
+
+            <input
+                type="text"
+                id="vehicleNumber"
+                placeholder="Example: TN 00 AB 1234"
+                required
+            >
+
+
+
+            <label>
+                Current location
+            </label>
+
+            <div class="location-input">
+
+                <input
+                    type="text"
+                    id="customerLocation"
+                    placeholder="Enter your location"
+                    required
+                >
+
+                <button
+                    type="button"
+                    onclick="detectLocation(true)"
+                >
+                    📍
+                </button>
+
+            </div>
+
+
+
+            <label>
+                Additional details
+            </label>
+
+            <textarea
+                id="problemDetails"
+                rows="3"
+                placeholder="Describe the problem..."
+            ></textarea>
+
+
+
+            <div class="estimate">
+
+                <div>
+
+                    <span>
+                        Estimated service fee
+                    </span>
+
+                    <strong id="estimatedPrice">
+                        ₹199 - ₹599
+                    </strong>
+
+                </div>
+
+                <small>
+                    Final amount may vary by distance/service.
+                </small>
+
+            </div>
+
+
+
+            <button
+                type="submit"
+                class="submit-booking"
+            >
+                Confirm Help Request
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     BOOKING CONFIRMATION MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="confirmationModal"
+>
+
+    <div class="modal confirmation">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+
+        <h2>
+            Help Request Confirmed!
+        </h2>
+
+
+        <p>
+            Your request has been sent to nearby helpers.
+        </p>
+
+
+        <div class="booking-id-box">
+
+            <span>
+                BOOKING ID
+            </span>
+
+            <strong id="confirmedBookingId">
+                RR000000
+            </strong>
+
+        </div>
+
+
+        <div class="confirmation-details">
+
+            <div>
+
+                <span>
+                    Service
+                </span>
+
+                <strong id="confirmedService">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Status
+                </span>
+
+                <strong class="status-text">
+                    Finding helper
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Estimated arrival
+                </span>
+
+                <strong>
+                    10–20 min
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="submit-booking"
+            onclick="viewBooking()"
+        >
+            View Booking Status
+        </button>
+
+
+        <button
+            class="modal-secondary"
+            onclick="closeModal('confirmationModal')"
+        >
+            Continue Browsing
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     BOOKING STATUS MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="statusModal"
+>
+
+    <div class="modal status-modal">
+
+        <button
+            class="close-modal"
+            onclick="closeModal('statusModal')"
+        >
+            ×
+        </button>
+
+
+        <span class="section-label">
+            BOOKING STATUS
+        </span>
+
+
+        <h2>
+            Your help is on the way
+        </h2>
+
+
+        <div class="status-helper">
+
+            <div class="helper-avatar">
+                AK
+            </div>
+
+            <div>
+
+                <h3 id="statusHelperName">
+                    Arun Kumar
+                </h3>
+
+                <p id="statusHelperRole">
+                    Roadside Mechanic
+                </p>
+
+                <span class="rating">
+                    ⭐ 4.9
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="progress">
+
+            <div class="progress-step completed">
+
+                <div>
+                    ✓
+                </div>
+
+                <span>
+                    Requested
+                </span>
+
+            </div>
+
+
+            <div class="progress-line"></div>
+
+
+            <div class="progress-step completed">
+
+                <div>
+                    ✓
+                </div>
+
+                <span>
+                    Helper Found
+                </span>
+
+            </div>
+
+
+            <div class="progress-line"></div>
+
+
+            <div class="progress-step active">
+
+                <div>
+                    🚗
+                </div>
+
+                <span>
+                    On the Way
+                </span>
+
+            </div>
+
+
+            <div class="progress-line"></div>
+
+
+            <div class="progress-step">
+
+                <div>
+                    ✓
+                </div>
+
+                <span>
+                    Completed
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="eta-box">
+
+            <span>
+                Estimated arrival
+            </span>
+
+            <strong>
+                10–20 minutes
+            </strong>
+
+        </div>
+
+
+        <div class="status-actions">
+
+            <button
+                class="call-large"
+                onclick="callCurrentHelper()"
+            >
+                📞 Call
+            </button>
+
+            <button
+                class="message-large"
+                onclick="messageHelper('Arun Kumar')"
+            >
+                💬 Message
+            </button>
+
+        </div>
+
+
+        <button
+            class="cancel-booking"
+            onclick="cancelCurrentBooking()"
+        >
+            Cancel Booking
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PROFILE MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="profileModal"
+>
+
+    <div class="modal">
+
+        <button
+            class="close-modal"
+            onclick="closeModal('profileModal')"
+        >
+            ×
+        </button>
+
+
+        <div class="profile-large">
+            R
+        </div>
+
+
+        <h2>
+            My Profile
+        </h2>
+
+
+        <p class="modal-subtitle">
+            Your RoadRescue account
+        </p>
+
+
+        <label>
+            Name
+        </label>
+
+        <input
+            type="text"
+            value="Rithika"
+        >
+
+
+        <label>
+            Phone
+        </label>
+
+        <input
+            type="tel"
+            placeholder="Add phone number"
+        >
+
+
+        <label>
+            Preferred vehicle
+        </label>
+
+        <select>
+
+            <option>
+                Car
+            </option>
+
+            <option>
+                Bike
+            </option>
+
+            <option>
+                Scooter
+            </option>
+
+        </select>
+
+
+        <button
+            class="submit-booking"
+            onclick="saveProfile()"
+        >
+            Save Profile
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     NOTIFICATION MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="notificationModal"
+>
+
+    <div class="modal">
+
+        <button
+            class="close-modal"
+            onclick="closeModal('notificationModal')"
+        >
+            ×
+        </button>
+
+
+        <h2>
+            Notifications
+        </h2>
+
+
+        <div class="notification-item">
+
+            <div>
+                🔧
+            </div>
+
+            <div>
+
+                <strong>
+                    Helpers available nearby
+                </strong>
+
+                <p>
+                    12 helpers are currently online.
+                </p>
+
+                <small>
+                    Just now
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <div>
+                🛡️
+            </div>
+
+            <div>
+
+                <strong>
+                    Safety reminder
+                </strong>
+
+                <p>
+                    Always verify a helper before sharing information.
+                </p>
+
+                <small>
+                    10 min ago
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     HELPER FORM
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="helperModal"
+>
+
+    <div class="modal">
+
+        <button
+            class="close-modal"
+            onclick="closeModal('helperModal')"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-icon">
+            🤝
+        </div>
+
+
+        <h2>
+            Become a RoadRescue Helper
+        </h2>
+
+
+        <p class="modal-subtitle">
+            Help people around you and grow your local community.
+        </p>
+
+
+        <form
+            onsubmit="submitHelper(event)"
+        >
+
+            <label>
+                Full name
+            </label>
+
+            <input
+                type="text"
+                placeholder="Your name"
+                required
+            >
+
+
+            <label>
+                Phone number
+            </label>
+
+            <input
+                type="tel"
+                placeholder="10-digit number"
+                required
+            >
+
+
+            <label>
+                Service you provide
+            </label>
+
+            <select required>
+
+                <option value="">
+                    Select service
+                </option>
+
+                <option>
+                    Mechanic
+                </option>
+
+                <option>
+                    Towing
+                </option>
+
+                <option>
+                    Battery Assistance
+                </option>
+
+                <option>
+                    Fuel Delivery
+                </option>
+
+                <option>
+                    General Roadside Assistance
+                </option>
+
+            </select>
+
+
+            <label>
+                Experience
+            </label>
+
+            <input
+                type="text"
+                placeholder="Example: 5 years"
+                required
+            >
+
+
+            <label>
+                Service area
+            </label>
+
+            <input
+                type="text"
+                placeholder="City / Area"
+                required
+            >
+
+
+            <button
+                type="submit"
+                class="submit-booking"
+            >
+                Submit Application
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    id="toast"
+    class="toast"
+>
+    <span id="toastIcon">
+        ✓
+    </span>
+
+    <span id="toastMessage">
+        Done
+    </span>
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   GLOBAL VARIABLES
+===================================================== */
+
+let selectedHelper = null;
+
+let currentBooking = null;
+
+
+/* =====================================================
+   MODAL FUNCTIONS
+===================================================== */
+
+function openModal(id) {
+
+    document
+        .getElementById(id)
+        .classList.add("show");
+
+}
+
+
+function closeModal(id) {
+
+    document
+        .getElementById(id)
+        .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   SCROLL
+===================================================== */
+
+function scrollToSection(id) {
+
+    document
+        .getElementById(id)
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* =====================================================
+   BOOKING
+===================================================== */
+
+function openBooking() {
+
+    document
+        .getElementById("bookingModal")
+        .classList.add("show");
+
+}
+
+
+function selectService(service) {
+
+    document
+        .getElementById("serviceSelect")
+        .value = service;
+
+    updatePrice(service);
+
+    openBooking();
+
+}
+
+
+function updatePrice(service) {
+
+    const price =
+        document.getElementById("estimatedPrice");
+
+
+    let text = "₹199 - ₹599";
+
+
+    if (service === "Flat Tyre") {
+
+        text = "₹199 - ₹499";
+
+    }
+
+    else if (service === "Battery Jump Start") {
+
+        text = "₹199 - ₹399";
+
+    }
+
+    else if (service === "Fuel Delivery") {
+
+        text = "₹299 - ₹699";
+
+    }
+
+    else if (service === "Towing") {
+
+        text = "₹799 - ₹1,999";
+
+    }
+
+    else if (service === "Mechanical Repair") {
+
+        text = "₹299 - ₹999";
+
+    }
+
+
+    price.innerText = text;
+
+}
+
+
+document
+    .getElementById("serviceSelect")
+    .addEventListener(
+        "change",
+        function() {
+
+            updatePrice(this.value);
+
+        }
+    );
+
+
+
+/* =====================================================
+   BOOK WITH SPECIFIC HELPER
+===================================================== */
+
+function bookWithHelper(
+    name,
+    role,
+    distance,
+    rating
+) {
+
+    selectedHelper = {
+
+        name: name,
+
+        role: role,
+
+        distance: distance,
+
+        rating: rating
+
+    };
+
+
+    openBooking();
+
+
+    showToast(
+        "Helper selected: " + name,
+        "✓"
+    );
+
+}
+
+
+/* =====================================================
+   SUBMIT BOOKING
+===================================================== */
+
+function submitBooking(event) {
+
+    event.preventDefault();
+
+
+    const service =
+        document.getElementById(
+            "serviceSelect"
+        ).value;
+
+
+    const name =
+        document.getElementById(
+            "customerName"
+        ).value;
+
+
+    const phone =
+        document.getElementById(
+            "customerPhone"
+        ).value;
+
+
+    const vehicle =
+        document.getElementById(
+            "vehicleType"
+        ).value;
+
+
+    const vehicleNumber =
+        document.getElementById(
+            "vehicleNumber"
+        ).value;
+
+
+    const location =
+        document.getElementById(
+            "customerLocation"
+        ).value;
+
+
+    const details =
+        document.getElementById(
+            "problemDetails"
+        ).value;
+
+
+    const bookingId =
+        "RR" +
+        Date.now()
+            .toString()
+            .slice(-7);
+
+
+    const price =
+        document
+            .getElementById(
+                "estimatedPrice"
+            )
+            .innerText;
+
+
+    const booking = {
+
+        id: bookingId,
+
+        service: service,
+
+        customer: name,
+
+        phone: phone,
+
+        vehicle: vehicle,
+
+        vehicleNumber: vehicleNumber,
+
+        location: location,
+
+        details: details,
+
+        price: price,
+
+        status: "Finding helper",
+
+        date: new Date()
+            .toLocaleString(),
+
+        helper:
+            selectedHelper
+                ? selectedHelper.name
+                : "Finding nearby helper"
+
+    };
+
+
+    currentBooking = booking;
+
+
+    let bookings =
+        JSON.parse(
+            localStorage.getItem(
+                "roadRescueBookings"
+            )
+        ) || [];
+
+
+    bookings.unshift(booking);
+
+
+    localStorage.setItem(
+        "roadRescueBookings",
+        JSON.stringify(bookings)
+    );
+
+
+    document
+        .getElementById(
+            "confirmedBookingId"
+        )
+        .innerText = bookingId;
+
+
+    document
+        .getElementById(
+            "confirmedService"
+        )
+        .innerText = service;
+
+
+    closeModal("bookingModal");
+
+
+    openModal("confirmationModal");
+
+
+    loadBookings();
+
+
+    showToast(
+        "Help request created!",
+        "✓"
+    );
+
+}
+
+
+/* =====================================================
+   VIEW BOOKING
+===================================================== */
+
+function viewBooking() {
+
+    closeModal("confirmationModal");
+
+    openModal("statusModal");
+
+}
+
+
+/* =====================================================
+   LOAD BOOKINGS
+===================================================== */
+
+function loadBookings() {
+
+    const container =
+        document.getElementById(
+            "bookingList"
+        );
+
+
+    let bookings =
+        JSON.parse(
+            localStorage.getItem(
+                "roadRescueBookings"
+            )
+        ) || [];
+
+
+    if (bookings.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="empty-bookings">
+
+                <div>📋</div>
+
+                <h3>
+                    No bookings yet
+                </h3>
+
+                <p>
+                    Your roadside assistance bookings
+                    will appear here.
+                </p>
+
+                <button
+                    class="btn primary"
+                    onclick="openBooking()"
+                >
+                    Request Help
+                </button>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    bookings.forEach(
+        function(booking) {
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "booking-card";
+
+
+            card.innerHTML = `
+
+                <div class="booking-main">
+
+                    <div class="booking-service-icon">
+                        🚗
+                    </div>
+
+                    <div>
+
+                        <span class="booking-id">
+                            ${booking.id}
+                        </span>
+
+                        <h3>
+                            ${booking.service}
+                        </h3>
+
+                        <p>
+                            ${booking.location}
+                        </p>
+
+                        <small>
+                            ${booking.date}
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="booking-right">
+
+                    <span class="booking-status">
+                        ${booking.status}
+                    </span>
+
+                    <strong>
+                        ${booking.price}
+                    </strong>
+
+                    <button
+                        onclick='openSavedBooking(${JSON.stringify(booking)})'
+                    >
+                        View Details
+                    </button>
+
+                </div>
+
+            `;
+
+
+            container.appendChild(card);
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   SAVED BOOKING
+===================================================== */
+
+function openSavedBooking(booking) {
+
+    currentBooking = booking;
+
+
+    document
+        .getElementById(
+            "statusHelperName"
+        )
+        .innerText =
+        booking.helper !==
+        "Finding nearby helper"
+            ? booking.helper
+            : "Nearby Helper";
+
+
+    document
+        .getElementById(
+            "statusHelperRole"
+        )
+        .innerText =
+        booking.service;
+
+
+    openModal("statusModal");
+
+}
+
+
+/* =====================================================
+   CANCEL BOOKING
+===================================================== */
+
+function cancelCurrentBooking() {
+
+    if (!currentBooking) {
+
+        closeModal("statusModal");
+
+        return;
+
+    }
+
+
+    let bookings =
+        JSON.parse(
+            localStorage.getItem(
+                "roadRescueBookings"
+            )
+        ) || [];
+
+
+    bookings =
+        bookings.filter(
+            booking =>
+                booking.id !==
+                currentBooking.id
+        );
+
+
+    localStorage.setItem(
+        "roadRescueBookings",
+        JSON.stringify(bookings)
+    );
+
+
+    currentBooking = null;
+
+
+    closeModal("statusModal");
+
+
+    loadBookings();
+
+
+    showToast(
+        "Booking cancelled successfully",
+        "✓"
+    );
+
+}
+
+
+/* =====================================================
+   CLEAR HISTORY
+===================================================== */
+
+function clearBookings() {
+
+    const answer =
+        confirm(
+            "Clear all booking history?"
+        );
+
+
+    if (!answer) return;
+
+
+    localStorage.removeItem(
+        "roadRescueBookings"
+    );
+
+
+    loadBookings();
+
+
+    showToast(
+        "Booking history cleared",
+        "✓"
+    );
+
+}
+
+
+/* =====================================================
+   CALL HELPER
+===================================================== */
+
+function callHelper(name, phone) {
+
+    showToast(
+        "Calling " + name,
+        "📞"
+    );
+
+
+    window.location.href =
+        "tel:" + phone;
+
+}
+
+
+function callCurrentHelper() {
+
+    callHelper(
+        "Arun Kumar",
+        "+919800000001"
+    );
+
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function messageHelper(name) {
+
+    const message =
+        encodeURIComponent(
+            "Hi " +
+            name +
+            ", I need roadside assistance."
+        );
+
+
+    window.location.href =
+        "sms:?body=" +
+        message;
+
+
+    showToast(
+        "Opening messages...",
+        "💬"
+    );
+
+}
+
+
+/* =====================================================
+   SEARCH HELPERS
+===================================================== */
+
+function searchHelpers() {
+
+    const value =
+        document
+            .getElementById(
+                "helperSearch"
+            )
+            .value
+            .toLowerCase();
+
+
+    const cards =
+        document.querySelectorAll(
+            ".helper-card"
+        );
+
+
+    cards.forEach(
+        card => {
+
+            const name =
+                card
+                    .dataset
+                    .name
+                    .toLowerCase();
+
+
+            card.style.display =
+                name.includes(value)
+                    ? "block"
+                    : "none";
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   FILTER HELPERS
+===================================================== */
+
+function filterHelpers() {
+
+    const type =
+        document
+            .getElementById(
+                "helperFilter"
+            ).value;
+
+
+    const cards =
+        document.querySelectorAll(
+            ".helper-card"
+        );
+
+
+    cards.forEach(
+        card => {
+
+            if (
+                type === "all" ||
+                card.dataset.type === type
+            ) {
+
+                card.style.display =
+                    "block";
+
+            }
+
+            else {
+
+                card.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   LOCATION
+===================================================== */
+
+function detectLocation(
+    insideBooking = false
+) {
+
+    if (!navigator.geolocation) {
+
+        showToast(
+            "Location is not supported by this browser",
+            "!"
+        );
+
+        return;
+
+    }
+
+
+    showToast(
+        "Detecting your location...",
+        "📍"
+    );
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            const lat =
+                position.coords.latitude;
+
+
+            const lon =
+                position.coords.longitude;
+
+
+            const location =
+                lat.toFixed(5) +
+                ", " +
+                lon.toFixed(5);
+
+
+            if (insideBooking) {
+
+                document
+                    .getElementById(
+                        "customerLocation"
+                    )
+                    .value =
+                    "Current GPS Location (" +
+                    location +
+                    ")";
+
+            }
+
+
+            showToast(
+                "Location detected successfully",
+                "✓"
+            );
+
+        },
+
+
+        function() {
+
+            showToast(
+                "Unable to detect location. Enter it manually.",
+                "!"
+            );
+
+        }
+
+    );
+
+}
+
+
+/* =====================================================
+   NEARBY SEARCH
+===================================================== */
+
+function searchNearby(place) {
+
+    const url =
+        "https://www.openstreetmap.org/search?query=" +
+        encodeURIComponent(place);
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+
+    showToast(
+        "Opening nearby " + place,
+        "📍"
+    );
+
+}
+
+
+function openMap() {
+
+    window.open(
+        "https://www.openstreetmap.org/",
+        "_blank"
+    );
+
+}
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+function openProfile() {
+
+    openModal(
+        "profileModal"
+    );
+
+}
+
+
+function saveProfile() {
+
+    showToast(
+        "Profile saved successfully",
+        "✓"
+    );
+
+
+    closeModal(
+        "profileModal"
+    );
+
+}
+
+
+/* =====================================================
+   NOTIFICATIONS
+===================================================== */
+
+function openNotifications() {
+
+    openModal(
+        "notificationModal"
+    );
+
+
+    document
+        .getElementById(
+            "notificationCount"
+        )
+        .style.display =
+        "none";
+
+}
+
+
+/* =====================================================
+   EMERGENCY
+===================================================== */
+
+function callEmergency() {
+
+    const answer =
+        confirm(
+            "Call India's emergency number 112?"
+        );
+
+
+    if (answer) {
+
+        window.location.href =
+            "tel:112";
+
+    }
+
+}
+
+
+/* =====================================================
+   HELPER APPLICATION
+===================================================== */
+
+function openHelperForm() {
+
+    openModal(
+        "helperModal"
+    );
+
+}
+
+
+function submitHelper(event) {
+
+    event.preventDefault();
+
+
+    closeModal(
+        "helperModal"
+    );
+
+
+    showToast(
+        "Application submitted successfully!",
+        "✓"
+    );
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(
+    message,
+    icon = "✓"
+) {
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+
+    document
+        .getElementById(
+            "toastMessage"
+        )
+        .innerText =
+        message;
+
+
+    document
+        .getElementById(
+            "toastIcon"
+        )
+        .innerText =
+        icon;
+
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    setTimeout(
+        function() {
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },
+        3000
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+===================================================== */
+
+document
+    .querySelectorAll(
+        ".modal-overlay"
+    )
+    .forEach(
+        overlay => {
+
+            overlay.addEventListener(
+                "click",
+                function(event) {
+
+                    if (
+                        event.target ===
+                        overlay
+                    ) {
+
+                        overlay.classList.remove(
+                            "show"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        loadBookings();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
